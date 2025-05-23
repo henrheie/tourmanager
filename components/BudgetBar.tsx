@@ -9,6 +9,9 @@ interface BudgetBarProps {
 
 export const BudgetBar: FC<BudgetBarProps> = ({ spent }) => {
   const remaining = TOTAL_BUDGET - spent;
+  const remainingText = Number.isInteger(remaining)
+    ? remaining.toString()
+    : remaining.toFixed(1);
   const over = remaining < 0;
   return (
     <motion.div
@@ -24,7 +27,7 @@ export const BudgetBar: FC<BudgetBarProps> = ({ spent }) => {
         />
       </div>
       <p className="text-sm mt-1" aria-live="polite">
-        {remaining.toFixed(1)} mill. NOK igjen
+        {remainingText} mill. NOK igjen
       </p>
     </motion.div>
   );
