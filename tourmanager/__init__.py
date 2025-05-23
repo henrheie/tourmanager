@@ -18,6 +18,14 @@ def create_app():
     with app.app_context():
         from . import models
         db.create_all()
+
+        # Ensure stages 1-21 exist
+        if models.Stage.query.count() == 0:
+            for i in range(1, 22):
+                stage = models.Stage(id=i, name=f"Stage {i}")
+                db.session.add(stage)
+            db.session.commit()
+
         from . import views
         app.register_blueprint(views.bp)
 
