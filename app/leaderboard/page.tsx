@@ -1,9 +1,9 @@
 
-import { use } from 'react';
+'use client';
 import { useLeaderboard } from '@/lib/fetchers';
 
 export default function LeaderboardPage() {
-  const { data } = use(useLeaderboard());
+  const { data } = useLeaderboard();
 
   return (
     <div className="p-4">

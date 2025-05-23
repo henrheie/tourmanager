@@ -1,10 +1,10 @@
 
-import { use } from 'react';
+'use client';
 import Link from 'next/link';
 import { useLeaderboard } from '@/lib/fetchers';
 
 export default function LeaguePage({ params }: { params: { id: string } }) {
-  const { data } = use(useLeaderboard());
+  const { data } = useLeaderboard();
   const invite = `https://example.com/league/${params.id}`;
   return (
     <div className="p-4">
