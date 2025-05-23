@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block body %}
-<h1>Stages</h1>
-<ul>
-  {% for stage in stages %}
-    <li><a href="{{ url_for('main.stage', stage_id=stage.id) }}">{{ stage.name or 'Stage ' ~ stage.id }}</a></li>
-  {% endfor %}
-</ul>
-{% endblock %}

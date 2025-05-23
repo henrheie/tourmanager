@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Rider One",
+    "team": "Team A",
+    "price": 12,
+    "category": "kaptein",
+    "ownership": 25
+  },
+  {
+    "id": 2,
+    "name": "Rider Two",
+    "team": "Team B",
+    "price": 8,
+    "category": "spurter",
+    "ownership": 45
+  }
+]
