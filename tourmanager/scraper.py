@@ -25,3 +25,23 @@ def scrape_rankings(stage_id):
         result = StageResult(stage_id=stage_id, rider=rider, position=position)
         db.session.add(result)
     db.session.commit()
+
+
+def scrape_all_riders_with_cost():
+    """Fetch general classification and assign a cost based on position."""
+    url = BASE_URL
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+
+    rows = soup.select('table.ranking tbody tr')
+    for row in rows:
+        name = row.select_one('.rider').text.strip()
+        position = int(row.select_one('.position').text)
+        cost = max(0, 1000 - position * 10)
+        rider = Rider.query.filter_by(name=name).first()
+        if not rider:
+            rider = Rider(name=name, category='unknown', cost=cost)
+            db.session.add(rider)
+        else:
+            rider.cost = cost
+    db.session.commit()
