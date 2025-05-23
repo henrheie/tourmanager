@@ -1,10 +1,10 @@
 
-import { use } from 'react';
+'use client';
 import { useStages } from '@/lib/fetchers';
 import { notFound } from 'next/navigation';
 
 export default function StagePage({ params }: { params: { id: string } }) {
-  const { data: stages } = use(useStages());
+  const { data: stages } = useStages();
   const stage = stages.find((s: any) => String(s.id) === params.id);
   if (!stage) return notFound();
 

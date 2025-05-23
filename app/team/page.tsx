@@ -1,5 +1,5 @@
 'use client';
-import { useState, use } from "react";
+import { useState } from "react";
 import { useRiders } from '@/lib/fetchers';
 import { BudgetBar } from '@/components/BudgetBar';
 import { RiderCard } from '@/components/RiderCard';
@@ -17,7 +17,7 @@ interface Rider {
 }
 
 export default function TeamPage() {
-  const { data: riders } = use(useRiders());
+  const { data: riders } = useRiders();
   const [selectedCat, setCat] = useState(0);
   const [squad, setSquad] = useState<Rider[]>([]);
   const [transfers, setTransfers] = useState(0);

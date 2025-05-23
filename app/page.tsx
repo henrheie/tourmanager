@@ -1,12 +1,11 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { use } from 'react';
 import { useRiders } from '@/lib/fetchers';
 import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
-  const { data: riders } = use(useRiders());
+  const { data: riders } = useRiders();
   return (
     <main className="p-4">
       <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-3xl font-bold mb-4">
