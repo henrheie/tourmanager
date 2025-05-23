@@ -1,6 +1,6 @@
 'use client';
-import { Card, CardContent } from 'shadcn-ui/card';
-import { Button } from 'shadcn-ui/button';
+import { Card, CardContent } from './ui/card';
+import { Button } from './ui/button';
 import { FC } from 'react';
 
 interface Rider {
