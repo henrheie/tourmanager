@@ -1,3 +1,4 @@
+
 import { use } from 'react';
 import Link from 'next/link';
 import { useLeaderboard } from '@/lib/fetchers';
