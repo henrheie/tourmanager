@@ -1,4 +1,4 @@
-"use client";
+
 import { use } from 'react';
 import { useLeaderboard } from '@/lib/fetchers';
 

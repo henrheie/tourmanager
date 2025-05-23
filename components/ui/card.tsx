@@ -1,4 +1,4 @@
-"use client";
+
 import { clsx } from 'clsx';
 import { HTMLAttributes } from 'react';
 
@@ -19,3 +19,4 @@ export function CardContent({ className, ...props }: HTMLAttributes<HTMLDivEleme
     <div className={clsx('p-4', className)} {...props} />
   );
 }
+
